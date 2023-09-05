@@ -25,6 +25,7 @@
   <ItemGroup>
     <Content Include=".coverage" />
     <Content Include="db.sqlite3" />
+    <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
     <Content Include="museum\templates\museum\diagram.html" />
@@ -65,6 +66,8 @@
     <Compile Include="museum\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="media\images\" />
+    <Folder Include="media\images\profile_photos\" />
     <Folder Include="museum" />
     <Folder Include="MuseumApp" />
     <Folder Include="museum\migrations" />
@@ -73,6 +76,7 @@
     <Folder Include="museum\templates\museum" />
     <Folder Include="museum\templates\registration" />
     <Folder Include="museum\tests" />
+    <Folder Include="media\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

@@ -31,6 +31,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Employee(models.Model):
 
     user_name = models.CharField(max_length=20, help_text="Enter user name")
+    
+    photo = models.ImageField(upload_to="images/profile_photos/", help_text="Enter profile photo")
 
     first_name = models.CharField(max_length=20, help_text="Enter full name")
 
@@ -38,9 +40,9 @@ class Employee(models.Model):
 
     hall = models.ForeignKey('Hall', on_delete=models.CASCADE, related_name="employee")
 
-    num_validetor = RegexValidator(regex=r"^\+375 \(29\) \d{3}-\d{2}-\d{2}$")
+    num_validator = RegexValidator(regex=r"^\+375 \(29\) \d{3}-\d{2}-\d{2}$")
 
-    phone_number = models.CharField(max_length=20, validators=[num_validetor], default='+375 (29) xxx-xx-xx')
+    phone_number = models.CharField(max_length=20, validators=[num_validator], default='+375 (29) xxx-xx-xx')
 
     position = models.ForeignKey('Position', on_delete=models.CASCADE,related_name="employee")
 
@@ -137,5 +139,14 @@ class Theme(models.Model):
     def __str__(self):
         return self.name
 
+
+class Article(models.Model):
+    title = models.CharField(max_length=20, help_text="enter title of the article")
+    
+    summury = models.TextField(max_length=100, help_text="enter summury of the article")
+    
+    image =  models.ImageField(upload_to="images/article_photos/", help_text="Enter article photo")
+    
+    content = models.TextField(help_text="enter content of the article")
 
 
