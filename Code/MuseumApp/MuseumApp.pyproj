@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e718c7d8-f548-43d6-bf70-dd24adfbe2e4}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId>
+    </InterpreterId>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <DjangoSettingsModule>MuseumApp.settings</DjangoSettingsModule>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".coverage" />
+    <Content Include="db.sqlite3" />
+    <Content Include="museum\static\site.css" />
+    <Content Include="museum\templates\museum\about.html" />
+    <Content Include="museum\templates\museum\diagram.html" />
+    <Content Include="museum\templates\museum\excursion.html" />
+    <Content Include="museum\templates\museum\exhibition.html" />
+    <Content Include="museum\templates\museum\exhibits.html" />
+    <Content Include="museum\templates\museum\exposition.html" />
+    <Content Include="museum\templates\museum\hall.html" />
+    <Content Include="museum\templates\museum\index.html" />
+    <Content Include="museum\templates\museum\info.html" />
+    <Content Include="museum\templates\museum\layout.html" />
+    <Content Include="museum\templates\museum\user_account.html" />
+    <Content Include="museum\templates\registration\logged_out.html" />
+    <Content Include="museum\templates\registration\login.html" />
+    <Content Include="pytest.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="MuseumApp\asgi.py" />
+    <Compile Include="MuseumApp\settings.py" />
+    <Compile Include="MuseumApp\urls.py" />
+    <Compile Include="MuseumApp\wsgi.py" />
+    <Compile Include="MuseumApp\__init__.py" />
+    <Compile Include="museum\admin.py" />
+    <Compile Include="museum\apps.py" />
+    <Compile Include="museum\forms.py" />
+    <Compile Include="museum\migrations\0001_initial.py" />
+    <Compile Include="museum\migrations\0002_employee_password.py" />
+    <Compile Include="museum\migrations\0003_remove_employee_password.py" />
+    <Compile Include="museum\migrations\__init__.py" />
+    <Compile Include="museum\models.py" />
+    <Compile Include="museum\tests\conftest.py" />
+    <Compile Include="museum\tests\constants.py" />
+    <Compile Include="museum\tests\test_forms.py" />
+    <Compile Include="museum\tests\test_views.py" />
+    <Compile Include="museum\urls.py" />
+    <Compile Include="museum\views.py" />
+    <Compile Include="museum\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="museum" />
+    <Folder Include="MuseumApp" />
+    <Folder Include="museum\migrations" />
+    <Folder Include="museum\static" />
+    <Folder Include="museum\templates\" />
+    <Folder Include="museum\templates\museum" />
+    <Folder Include="museum\templates\registration" />
+    <Folder Include="museum\tests" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
