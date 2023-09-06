@@ -6,7 +6,7 @@ from django.dispatch import receiver
 from django.http import Http404
 
 from museum.forms import ExhibitForm
-from .models import ArtForm, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Position, Theme
+from .models import ArtForm, Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Position, Theme
 import re
 
 @receiver(post_save, sender=Employee)
@@ -122,6 +122,10 @@ class ExpositionAdmin(admin.ModelAdmin):
 
 @admin.register(Exhibition)
 class ExhibitionAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
     pass
 
 

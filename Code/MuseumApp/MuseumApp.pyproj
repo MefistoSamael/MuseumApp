@@ -11,8 +11,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <InterpreterId>
-    </InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <DjangoSettingsModule>MuseumApp.settings</DjangoSettingsModule>
     <TestFramework>Pytest</TestFramework>
@@ -28,6 +27,7 @@
     <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
+    <Content Include="museum\templates\museum\article.html" />
     <Content Include="museum\templates\museum\diagram.html" />
     <Content Include="museum\templates\museum\excursion.html" />
     <Content Include="museum\templates\museum\exhibition.html" />
@@ -37,10 +37,12 @@
     <Content Include="museum\templates\museum\index.html" />
     <Content Include="museum\templates\museum\info.html" />
     <Content Include="museum\templates\museum\layout.html" />
+    <Content Include="museum\templates\museum\articles.html" />
     <Content Include="museum\templates\museum\user_account.html" />
     <Content Include="museum\templates\registration\logged_out.html" />
     <Content Include="museum\templates\registration\login.html" />
     <Content Include="pytest.ini" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="manage.py" />
@@ -77,6 +79,17 @@
     <Folder Include="museum\templates\registration" />
     <Folder Include="museum\tests" />
     <Folder Include="media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.11</Version>
+      <Description>env (Python 3.11 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

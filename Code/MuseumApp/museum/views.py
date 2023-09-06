@@ -1,12 +1,14 @@
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from typing import Any
 from django.db.models.query import QuerySet
-from django.views import View, generic
+from django.views import View
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
-from .models import Employee, Excursion, Exhibit, Exhibition, Exposition, Hall
+from .models import Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall
 from django.contrib import admin
 import logging
 from plotly.graph_objects import Bar, Layout, Figure
@@ -50,14 +52,14 @@ def about(request):
     )
 
 
-class ExcursionListView(generic.ListView):
+class ExcursionListView(ListView):
     model = Excursion
 
     context_object_name = 'excursion_list'
 
     template_name = 'museum/excursion.html'
     
-class HallListView(generic.ListView):
+class HallListView(ListView):
     model = Hall
 
     context_object_name = 'hall_list'
@@ -84,7 +86,7 @@ class HallExibitDetailView(View):
         return render(request, 'museum/exhibits.html', context={'exhibits' : Exhibit.objects.filter(hall= hall), })
         
         
-class ExpositionListView(generic.ListView):
+class ExpositionListView(ListView):
     model = Exposition
 
     context_object_name = 'exposition_list'
@@ -92,7 +94,7 @@ class ExpositionListView(generic.ListView):
     template_name = 'museum/exposition.html'
 
 
-class ExhibitionListView(generic.ListView):
+class ExhibitionListView(ListView):
     model = Exhibition
 
     context_object_name = 'exhibition_list'
@@ -184,3 +186,24 @@ class DiagramView(View):
         plot_div = fig.to_html(full_html=False)
 
         return render(request, 'museum/diagram.html', context={'plot_div': plot_div})
+    
+class ArticlesListView(ListView):
+    model = Article
+    
+    template_name = 'museum/articles.html'
+    
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     return context
+    
+class ArticleDetailView(DetailView):
+    model = Article
+
+    template_name = 'museum/article.html'
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     return context
+    
+
+
+
