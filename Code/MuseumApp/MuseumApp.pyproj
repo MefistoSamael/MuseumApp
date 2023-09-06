@@ -27,6 +27,7 @@
     <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
+    <Content Include="museum\templates\museum\article.html" />
     <Content Include="museum\templates\museum\diagram.html" />
     <Content Include="museum\templates\museum\excursion.html" />
     <Content Include="museum\templates\museum\exhibition.html" />
@@ -36,6 +37,7 @@
     <Content Include="museum\templates\museum\index.html" />
     <Content Include="museum\templates\museum\info.html" />
     <Content Include="museum\templates\museum\layout.html" />
+    <Content Include="museum\templates\museum\articles.html" />
     <Content Include="museum\templates\museum\user_account.html" />
     <Content Include="museum\templates\registration\logged_out.html" />
     <Content Include="museum\templates\registration\login.html" />

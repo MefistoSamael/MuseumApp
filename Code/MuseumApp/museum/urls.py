@@ -20,5 +20,7 @@ urlpatterns = [
     path('user/exhibits/', museum.views.EmployeeExhibitDetailView.as_view(),name='user_exhibits'),
     path('info/', museum.views.InfoView.as_view(), name='info'),
     path('diagram/', museum.views.DiagramView.as_view(), name='diagram'),
+    path("articles/", museum.views.ArticlesListView.as_view(), name="article-list"),
+    path("article/<int:pk>/", museum.views.ArticleDetailView.as_view(), name="article-detail"),
 
 ]

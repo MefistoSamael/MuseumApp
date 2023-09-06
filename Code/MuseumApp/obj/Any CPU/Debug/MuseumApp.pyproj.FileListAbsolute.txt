@@ -1,3 +1,0 @@
-C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\obj\Any CPU\Debug\MuseumApp.pyproj.CoreCompileInputs.cache
-C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\bin\Microsoft.PythonTools.WebRole.dll
-C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\bin\wfastcgi.py

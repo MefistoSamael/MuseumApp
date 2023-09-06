@@ -1,5 +1,7 @@
+from xmlrpc.client import DateTime
 from django.core.validators import MinLengthValidator
 from django.db import models
+from datetime import datetime
 from django.core.validators import RegexValidator
 
 class Hall(models.Model):
@@ -141,12 +143,14 @@ class Theme(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=20, help_text="enter title of the article")
+    title = models.CharField(max_length=100, help_text="enter title of the article")
     
-    summury = models.TextField(max_length=100, help_text="enter summury of the article")
+    summury = models.TextField(max_length=500, help_text="enter summury of the article")
     
     image =  models.ImageField(upload_to="images/article_photos/", help_text="Enter article photo")
     
     content = models.TextField(help_text="enter content of the article")
+    
+    creation_date = models.DateTimeField(auto_now_add=True)
 
 
