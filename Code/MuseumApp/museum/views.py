@@ -19,10 +19,10 @@ logger = logging.getLogger(__name__)
 class HomeView(View):
     @staticmethod
     def get(request):
-        response = requests.get('https://dog.ceo/api/breeds/image/random')
-        image_url = response.json()['message']
-
-        url = 'https://official-joke-api.appspot.com/random_joke'
+        # response = requests.get('https://dog.ceo/api/breeds/image/random')
+        # image_url = response.json()['message']
+        image_url = ""
+        # url = 'https://official-joke-api.appspot.com/random_joke'
         try:
             res = requests.get(url).json()
 

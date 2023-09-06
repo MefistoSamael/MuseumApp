@@ -113,3 +113,6 @@ static_collected
 *.bin/
 *.obj/
 *.vs
+
+bin/
+obj/
