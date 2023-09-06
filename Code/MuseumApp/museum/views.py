@@ -19,23 +19,8 @@ logger = logging.getLogger(__name__)
 class HomeView(View):
     @staticmethod
     def get(request):
-        # response = requests.get('https://dog.ceo/api/breeds/image/random')
-        # image_url = response.json()['message']
-        image_url = ""
-        # url = 'https://official-joke-api.appspot.com/random_joke'
-        try:
-            res = requests.get(url).json()
-
-            joke_setup = res['setup']
-            joke_punch = res['punchline']
-        except:
-            joke_setup = 'There will be no joke('
-            joke_punch = ''
-
         context = {
-            'image_url': image_url,
-            'setup':joke_setup,
-            'punch':joke_punch
+            'article' : Article.objects.latest("creation_date")
         }
 
         return render(request, 'museum/index.html', context)

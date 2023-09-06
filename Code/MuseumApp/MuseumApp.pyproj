@@ -11,8 +11,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <InterpreterId>
-    </InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <DjangoSettingsModule>MuseumApp.settings</DjangoSettingsModule>
     <TestFramework>Pytest</TestFramework>
@@ -54,7 +53,6 @@
     <Compile Include="MuseumApp\__init__.py" />
     <Compile Include="museum\admin.py" />
     <Compile Include="museum\apps.py" />
-    <Compile Include="museum\forms.py" />
     <Compile Include="museum\migrations\0001_initial.py" />
     <Compile Include="museum\migrations\0002_employee_password.py" />
     <Compile Include="museum\migrations\0003_remove_employee_password.py" />
@@ -66,7 +64,6 @@
     <Compile Include="museum\tests\test_views.py" />
     <Compile Include="museum\urls.py" />
     <Compile Include="museum\views.py" />
-    <Compile Include="museum\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="media\images\" />
@@ -80,6 +77,17 @@
     <Folder Include="museum\templates\registration" />
     <Folder Include="museum\tests" />
     <Folder Include="media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.11</Version>
+      <Description>env (Python 3.11 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

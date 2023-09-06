@@ -1,18 +1,9 @@
 {% extends "museum/layout.html" %}
-<html>
-<head>
-    <title>{{ title }}</title>
-    {% load static %} <!-- Instruct Django to load static files -->
-    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
-</head>
-<body>
-    {% block content %}
-    <span class="message">{{ message }}</span>{{ content }}
-    <h2>Random joke</h2>
-    <p>{{ setup }}</p>
-    <p>{{ punch }}</p>
-    <img src="{{ image_url }}" alt="Such image doesn't exist" style="max-width: 500px;">
-    {% endblock %}
-    <div><a href="about">About</a></div>
-</body>
-</html>
+
+{% block content %}
+    Latest article:
+<h3>{{ article.title }}</h3>
+<h4>{{ article.summury }}</h4>
+<img src="{{article.image.url}}" alt="Photo doesnt exist" style="max-width: 500px;"> <br />
+<a href="/article/{{article.pk}}">Reade more</a>
+{% endblock %}
