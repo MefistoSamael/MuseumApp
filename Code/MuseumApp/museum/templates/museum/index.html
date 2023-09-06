@@ -1,9 +1,13 @@
 {% extends "museum/layout.html" %}
 
 {% block content %}
-    Latest article:
+<h2>Latest article:</h2>
 <h3>{{ article.title }}</h3>
 <h4>{{ article.summury }}</h4>
-<img src="{{article.image.url}}" alt="Photo doesnt exist" style="max-width: 500px;"> <br />
+<img src="{{article.image.url}}" alt="Photo doesnt exist" style="max-width: 500px;">
+<br />
 <a href="/article/{{article.pk}}">Reade more</a>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+    <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner" style="max-width: 500px;">
+</a>
 {% endblock %}

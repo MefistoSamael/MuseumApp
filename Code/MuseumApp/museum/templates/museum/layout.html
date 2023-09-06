@@ -8,34 +8,46 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="/" class="navbar-brand">Museum App</a>
-        <a href="{% url 'home' %}" class="navbar-item">Home</a>
-        <a href="{% url 'about' %}" class="navbar-item">About</a>
-        <a href="{% url 'excursion' %}" class="navbar-item">Excursion</a>
-        <a href="{% url 'hall' %}" class="navbar-item">Halls</a>
-        <a href="{% url 'exposition' %}" class="navbar-item">Expositions</a>
-        <a href="{% url 'exhibition' %}" class="navbar-item">Exhibitions</a>
-        <a href="{% url 'article-list' %}" class="navbar-item">Articles</a>
-        {% if user.is_authenticated %}
-        <h class="navbar-item">User: {{ user.get_username }}</h>
-        {% if user.is_superuser %}
-        <a href="/admin/" class="navbar-item">My account</a>
-        <a href="{% url 'info' %}" class="navbar-item">Statistic</a>
-        <a href="{% url 'diagram' %}" class="navbar-item">Diagram</a>
-        {% else %}
-        <a href="{% url 'user_account' %}" class="navbar-item">My account</a>
-        {% endif %}
-        <a href="/accounts/logout/" class="navbar-item">Logout</a>
-        {% else %}
-        <a href="/accounts/login/" class="navbar-item">Login</a>
-        {% endif %}
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">Museum App</a>
+            <a href="{% url 'home' %}" class="navbar-item">Home</a>
+            <a href="{% url 'about' %}" class="navbar-item">About</a>
+            <a href="{% url 'excursion' %}" class="navbar-item">Excursion</a>
+            <a href="{% url 'hall' %}" class="navbar-item">Halls</a>
+            <a href="{% url 'exposition' %}" class="navbar-item">Expositions</a>
+            <a href="{% url 'exhibition' %}" class="navbar-item">Exhibitions</a>
+            <a href="{% url 'article-list' %}" class="navbar-item">Articles</a>
+            {% if user.is_authenticated %}
+            <h class="navbar-item">User: {{ user.get_username }}</h>
+            {% if user.is_superuser %}
+            <a href="/admin/" class="navbar-item">My account</a>
+            <a href="{% url 'info' %}" class="navbar-item">Statistic</a>
+            <a href="{% url 'diagram' %}" class="navbar-item">Diagram</a>
+            {% else %}
+            <a href="{% url 'user_account' %}" class="navbar-item">My account</a>
+            {% endif %}
+            <a href="/accounts/logout/" class="navbar-item">Logout</a>
+            {% else %}
+            <a href="/accounts/login/" class="navbar-item">Login</a>
+            {% endif %}
+        </div>
 
+    </header>
+    <main>
+        <div class="body-content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        Our partners:
+        <a href="https://twitter.com">
+            <img src="/media/icons/logos/twitter.png" alt="Facebook logo" style="max-width: 200px;">
+        </a>
+        <a href="https://facebook.com">
+            <img src="/media/icons/logos/facebook.png" alt="Facebook logo" style="max-width: 200px;">
+        </a>
 
-    </div>
-
-    <div class="body-content">
-        {% block content %}{% endblock %}
-    </div>
+    </footer>
 </body>
 </html>

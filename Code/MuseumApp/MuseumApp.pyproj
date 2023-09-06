@@ -24,7 +24,12 @@
   <ItemGroup>
     <Content Include=".coverage" />
     <Content Include="db.sqlite3" />
+    <Content Include="media\icons\logos\facebook.png" />
+    <Content Include="media\icons\logos\MuseumLogo.png" />
+    <Content Include="media\icons\logos\twitter.png" />
+    <Content Include="media\images\addBanners\addBanner.png" />
     <Content Include="media\images\profile_photos\profile_icon.png" />
+    <Content Include="media\videos\HD Epic Sax Gandalf.mp4" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
     <Content Include="museum\templates\museum\article.html" />
@@ -66,8 +71,12 @@
     <Compile Include="museum\views.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="media\icons\logos\" />
     <Folder Include="media\images\" />
+    <Folder Include="media\images\addBanners\" />
     <Folder Include="media\images\profile_photos\" />
+    <Folder Include="media\icons\" />
+    <Folder Include="media\videos\" />
     <Folder Include="museum" />
     <Folder Include="MuseumApp" />
     <Folder Include="museum\migrations" />

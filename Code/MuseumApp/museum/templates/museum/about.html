@@ -1,14 +1,16 @@
 {% extends "museum/layout.html" %}
-<html>
-<head>
-    <title>{{ title }}</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
-</head>
-<body>
-    <div><a href="home">Home</a></div>
-    {% block content %}
-    {{ content }}
-    {% endblock %}
-</body>
-</html>
+
+{% block content %}
+We are very big company wth very big and amazing history. Bla bla bla
+<br />
+
+<img src="/media/icons/logos/MuseumLogo.png" alt="breathtakin logo of brilliant company" style="max-width: 200px;"> <br />
+
+<video width="360" height="240"
+       src="/media/videos/HD Epic Sax Gandalf.mp4"
+       autoplay controls preload="none">
+    Video cannot be displayed
+</video>
+
+
+{% endblock %}
