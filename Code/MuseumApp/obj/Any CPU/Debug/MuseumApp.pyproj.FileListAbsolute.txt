@@ -1,3 +1,3 @@
-E:\!studying\term5\STRWP\Term4_IGI\Lab4\Code\MuseumApp\obj\Any CPU\Debug\MuseumApp.pyproj.CoreCompileInputs.cache
-E:\!studying\term5\STRWP\Term4_IGI\Lab4\Code\MuseumApp\bin\Microsoft.PythonTools.WebRole.dll
-E:\!studying\term5\STRWP\Term4_IGI\Lab4\Code\MuseumApp\bin\wfastcgi.py
+C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\obj\Any CPU\Debug\MuseumApp.pyproj.CoreCompileInputs.cache
+C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\bin\Microsoft.PythonTools.WebRole.dll
+C:\!studying\term5\STRWP\MuseumApp\Code\MuseumApp\bin\wfastcgi.py
