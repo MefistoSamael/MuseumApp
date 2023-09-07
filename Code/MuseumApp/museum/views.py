@@ -177,17 +177,16 @@ class ArticlesListView(ListView):
     
     template_name = 'museum/articles.html'
     
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     return context
-    
 class ArticleDetailView(DetailView):
     model = Article
 
     template_name = 'museum/article.html'
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     return context
+    
+class FAQView(View):    
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/faq.html')
+
     
 
 

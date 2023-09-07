@@ -1,10 +1,11 @@
-{% extends "museum/layout.html" %}
+{% extends "shared/layout.html" %}
 
 {% block content %}
 We are very big company wth very big and amazing history. Bla bla bla
 <br />
 
-<img src="/media/icons/logos/MuseumLogo.png" alt="breathtakin logo of brilliant company" style="max-width: 200px;"> <br />
+<img src="/media/icons/logos/MuseumLogo.png" alt="breathtakin logo of brilliant company" style="max-width: 200px;">
+<br />
 
 <video width="360" height="240"
        src="/media/videos/HD Epic Sax Gandalf.mp4"
@@ -12,5 +13,5 @@ We are very big company wth very big and amazing history. Bla bla bla
     Video cannot be displayed
 </video>
 
-
+{%include "shared/sertificate.html"%}
 {% endblock %}

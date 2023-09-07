@@ -18,6 +18,7 @@
             <a href="{% url 'exposition' %}" class="navbar-item">Expositions</a>
             <a href="{% url 'exhibition' %}" class="navbar-item">Exhibitions</a>
             <a href="{% url 'article-list' %}" class="navbar-item">Articles</a>
+            <a href="{% url 'faq' %}" class="navbar-item">FAQ</a>
             {% if user.is_authenticated %}
             <h class="navbar-item">User: {{ user.get_username }}</h>
             {% if user.is_superuser %}
@@ -40,6 +41,7 @@
         </div>
     </main>
     <footer>
+        <hr />
         Our partners:
         <a href="https://twitter.com">
             <img src="/media/icons/logos/twitter.png" alt="Facebook logo" style="max-width: 200px;">

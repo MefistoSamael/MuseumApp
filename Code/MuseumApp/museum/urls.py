@@ -22,5 +22,6 @@ urlpatterns = [
     path('diagram/', museum.views.DiagramView.as_view(), name='diagram'),
     path("articles/", museum.views.ArticlesListView.as_view(), name="article-list"),
     path("article/<int:pk>/", museum.views.ArticleDetailView.as_view(), name="article-detail"),
+    path("faaaaaaaaaq/", museum.views.FAQView.as_view(), name="faq"),
 
 ]

@@ -38,11 +38,13 @@
     <Content Include="museum\templates\museum\exhibition.html" />
     <Content Include="museum\templates\museum\exhibits.html" />
     <Content Include="museum\templates\museum\exposition.html" />
+    <Content Include="museum\templates\museum\faq.html" />
     <Content Include="museum\templates\museum\hall.html" />
     <Content Include="museum\templates\museum\index.html" />
     <Content Include="museum\templates\museum\info.html" />
-    <Content Include="museum\templates\museum\layout.html" />
+    <Content Include="museum\templates\shared\layout.html" />
     <Content Include="museum\templates\museum\articles.html" />
+    <Content Include="museum\templates\shared\sertificate.html" />
     <Content Include="museum\templates\museum\user_account.html" />
     <Content Include="museum\templates\registration\logged_out.html" />
     <Content Include="museum\templates\registration\login.html" />
@@ -83,6 +85,7 @@
     <Folder Include="museum\static" />
     <Folder Include="museum\templates\" />
     <Folder Include="museum\templates\museum" />
+    <Folder Include="museum\templates\shared\" />
     <Folder Include="museum\templates\registration" />
     <Folder Include="museum\tests" />
     <Folder Include="media\" />
