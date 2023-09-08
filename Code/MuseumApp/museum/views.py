@@ -187,6 +187,11 @@ class FAQView(View):
     def get(request):
         return render(request, 'museum/faq.html')
 
+class EmployeeListView(ListView):
+    model = Employee
+    
+    template_name = 'museum/contacts.html'
+
     
 
 

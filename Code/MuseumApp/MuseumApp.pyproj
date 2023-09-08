@@ -33,6 +33,7 @@
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
     <Content Include="museum\templates\museum\article.html" />
+    <Content Include="museum\templates\museum\contacts.html" />
     <Content Include="museum\templates\museum\diagram.html" />
     <Content Include="museum\templates\museum\excursion.html" />
     <Content Include="museum\templates\museum\exhibition.html" />
