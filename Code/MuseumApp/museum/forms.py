@@ -1,8 +1,10 @@
 # forms.py
+from dataclasses import fields
 from datetime import date
 import logging
 from typing import Any, Dict
 from django import forms
+from django.core import validators
 
 from museum.models import Employee, Exhibit, Exhibition, Hall, Promocode, Review
 
@@ -50,3 +52,17 @@ class PromocodeForm(forms.ModelForm):
     class Meta:
          model = Promocode
          fields = '__all__'
+
+class ReviewForm(forms.ModelForm):
+    reviewer = forms.CharField(max_length=50)
+     
+    rate = forms.IntegerField(validators=[validators.MinValueValidator(1),validators.MaxValueValidator(10)])
+    
+    text = forms.Textarea()
+    
+    class Meta:
+        model=Review
+        fields=['reviewer','rate', 'text']
+        
+
+    

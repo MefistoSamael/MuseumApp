@@ -1,19 +1,20 @@
 {% extends 'shared/layout.html' %}
 
 {% block content %}
-<h1>Our employees</h1>
-<ul>
-    {% for employee in object_list %}
-    <li>
-        <img src="{{employee.photo.url}}" alt="employee image" style="max-width: 500px;"><br />
-        <h3>{{employee.first_name}}</h3>
-        <h3>{{employee.last_name}}</h3>
-        <h3>{{ employee.position }}</h3>
-        <h3>{{ employee.phone_number}}</h3><br />
-    </li>
-    {% empty %}
-    <li>No employees yet.</li>
-    {% endfor %}
-</ul>
-
+<section>
+    <h1>Our employees</h1>
+    <ul>
+        {% for employee in object_list %}
+        <li>
+            <img src="{{employee.photo.url}}" alt="employee image" style="max-width: 500px;"><br />
+            <h3>{{employee.first_name}}</h3>
+            <h3>{{employee.last_name}}</h3>
+            <h3>{{ employee.position }}</h3>
+            <h3>{{ employee.phone_number}}</h3><br />
+        </li>
+        {% empty %}
+        <li>No employees yet.</li>
+        {% endfor %}
+    </ul>
+</section>
 {% endblock %}

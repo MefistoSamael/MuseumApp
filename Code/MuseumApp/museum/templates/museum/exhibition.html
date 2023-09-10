@@ -1,48 +1,51 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<h1>Exhibitions</h1>
-{% if exhibition_list %}
-<ul>
+<section itemscope itemtype="Http://data-vocabulary.org/Event/">
+    <h1>Exhibitions</h1>
+    {% if exhibition_list %}
+    <ul>
 
-    {% for exhibition in exhibition_list %}
-    <li>
-        Name: {{ exhibition.name }} 
-    </li>
-    <li>
-        Theme: {{ exhibition.theme }}
-    </li>
-    <li>
-        Date: {{ exhibition.date }}
-    </li>
-    
-    {%if exhibition.hall.all%}
-    <li>
-        Halls: 
-        <ul>
-            {% for hall in exhibition.hall.all %}
-            <li>
-                {{hall}}
-            </li>
-            {% endfor %}
-        </ul>
-    </li>
-    {%else%}
-    <li>
-        There are no halls
-    </li>
-    {% endif %}
-    <li>
-        <a href="exhibits/{{ exhibition.id }}">View exibits</a>
-    </li>
+        {% for exhibition in exhibition_list %}
+        <li itemprop="summary">
+            Name: {{ exhibition.name }}
+        </li>
+        <li>
+            Theme: {{ exhibition.theme }}
+        </li>
+        <li itemprop="startDate">
+            Date: {{ exhibition.date }}
+        </li>
+
+        {%if exhibition.hall.all%}
+        <li>
+            Halls:
+            <ul>
+                {% for hall in exhibition.hall.all %}
+                <li>
+                    {{hall}}
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {%else%}
+        <li>
+            There are no halls
+        </li>
+        {% endif %}
+        <li>
+            <a href="exhibits/{{ exhibition.id }}">View exibits</a>
+        </li>
 
 
-    <hr/>
+        <hr/>
 
-    {% endfor %}
+        {% endfor %}
 
-</ul>
-{% else %}
+    </ul>
+    {% else %}
     <p>There are no exhibition</p>
-{% endif %}
+    {% endif %}
+
+</section>
 {% endblock %}

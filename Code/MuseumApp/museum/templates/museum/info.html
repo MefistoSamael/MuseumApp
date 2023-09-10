@@ -4,12 +4,51 @@
 
 {% block content %}
   <h1>Static Info</h1>
-     <ul>
-        <li><em>Count of hals: </em>{{ halls_count }}</li>
-        <li><em>Count of exhibits: </em>{{ exhibits_count }}</li>
-        <li><em>Count of exhibitions: </em>{{ exhibitions_count }}</li>
-        <li><em>Count of expositions: </em>{{expositions_count}}</li>
-        <li><em>Count of excursions during this month: </em>{{ this_month_excursion_count }}</li>
+  <article>
+      <table border="1">
+          <tr>
+              <th id="parameter">Parameter</th>
+              <th id="count">Count</th>
+              <th id="period">Period</th>
+          </tr>
+          <tr>
+              <td headers="parameter">Count of hals</td>
+              <td headers="count">{{ halls_count }}</td>
+              <td headers="period">all time</td>
+          </tr>
+          <tr>
+              <td headers="parameter">Count of exhibits</td>
+              <td headers="count">{{ exhibits_count }}</td>
+              <td headers="period">all time</td>
+          </tr>
+          <tr>
+              <td headers="parameter">Count of exhibitions</td>
+              <td headers="count">{{ exhibitions_count }}</td>
+              <td headers="period">all time</td>
+          </tr>
+          <tr>
+              <td headers="parameter">Count of expositions</td>
+              <td headers="count">{{ expositions_count }}</td>
+              <td headers="period">all time</td>
+          </tr>
+          <tr>
+              <td headers="parameter">Count of excursions</td>
+              <td headers="count">{{ this_month_excursion_count }}</td>
+              <td headers="period">this month</td>
+          </tr>
+      </table>
+  </article>
+  <article>
+        <table border="1">
+            <tr>
+                <th>question</th>
+                <th>answer</th>
+            </tr>
+            <tr>
+                <td colspan="2">Colspan?</td>
+                <td>yeeees</td>
+            </tr>
 
-    </ul>
+        </table>
+  </article>
 {% endblock %}

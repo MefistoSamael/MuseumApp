@@ -1,7 +1,7 @@
 
 from django.urls import include, path, re_path
 import museum.views
-
+from .views import ReviewListView, ReviewDetailView, ReviewCreateView, ReviewUpdateView, ReviewDeleteView
 
 urlpatterns = [
 
@@ -28,4 +28,9 @@ urlpatterns = [
     path("vacancy/", museum.views.VacancyListView.as_view(), name="vacancy-list"),
     path("vacancy/<int:pk>/", museum.views.VacancyDetailView.as_view(), name="vacancy-detail"),
     path("promocodes/", museum.views.PromocodeView.as_view(), name="promocodes"),
+    path('reviews/', ReviewListView.as_view(), name='review_list'),
+    path('reviews/create/', ReviewCreateView.as_view(), name='review_create'),
+    path('reviews/<int:pk>/', ReviewDetailView.as_view(), name='review_detail'),
+    path('reviews/update/<int:pk>/', ReviewUpdateView.as_view(), name='review_update'),
+    path('reviews/delete/<int:pk>/', ReviewDeleteView.as_view(), name='review_delete'),
 ]

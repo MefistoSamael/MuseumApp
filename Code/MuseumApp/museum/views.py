@@ -2,6 +2,8 @@
 
 
 from django.views.generic.list import ListView
+from django.views.generic import CreateView, DeleteView, UpdateView
+from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from typing import Any
 from django.db.models.query import QuerySet
@@ -11,7 +13,9 @@ from django.http import Http404, HttpResponse
 from datetime import date, datetime, timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
-from .models import Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Promocode, Vacancy
+
+from museum.forms import ReviewForm
+from .models import Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Promocode, Review, Vacancy
 from django.contrib import admin
 import logging
 from plotly.graph_objects import Bar, Layout, Figure
@@ -219,4 +223,29 @@ class InfoView(View):
         }
 
         return render(request, 'museum/info.html', context)
+    
+class ReviewListView(ListView):
+    model = Review
+    template_name="museum/review_list.html"
+    context_object_name = "reviews"
+    
+class ReviewDetailView(DetailView):
+    model = Review
+    template_name = "museum/review_detail.html"
+    
+class ReviewCreateView(CreateView):
+    model = Review
+    template_name="museum/review_form.html"
+    form_class = ReviewForm
+    success_url = reverse_lazy('review_list')
+    
+class ReviewUpdateView(UpdateView):
+    model = Review
+    template_name="museum/review_form.html"
+    form_class = ReviewForm
+    success_url = reverse_lazy('review_list')
 
+class ReviewDeleteView(DeleteView):
+    model=Review
+    template_name="museum/review_delete.html"
+    success_url = reverse_lazy('review_list')
