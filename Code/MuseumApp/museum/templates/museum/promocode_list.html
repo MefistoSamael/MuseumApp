@@ -1,0 +1,186 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+<section id="anchor_section">
+    <a href="#valid_p">Valid Promocodes</a>
+    <a href="#expired_p">Epired Promocodes</a>
+    <a href="#inactive_p">Inactive Promocodes</a>
+</section>
+
+<h1>Valid Promocodes</h1>
+<ol start="-10" id="valid_p">
+    {% for valid in valid_promocodes %}
+    <li>
+        {{valid.code}}
+    </li>
+    {% empty %}
+    <li>No vacancys yet.</li>
+    {% endfor %}
+</ol>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a href="#anchor_section">To the sky</a>
+<h1>Expired Promocodes</h1>
+<ol id="expired_p">
+    {% for expired in expired_promocodes %}
+    <li>
+        {{expired.code}}
+    </li>
+    {% empty %}
+    <li>No vacancys yet.</li>
+    {% endfor %}
+</ol>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a href="#anchor_section">To the sky</a>
+<h1>Inactive Promocodes</h1>
+<ul id="inactive_p">
+    {% for inactive in inactive_promocodes %}
+    <li>
+        {{inactive.code}}
+    </li>
+    {% empty %}
+    <li>No vacancys yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

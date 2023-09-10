@@ -1,3 +1,6 @@
+
+
+
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from typing import Any
@@ -8,7 +11,7 @@ from django.http import Http404, HttpResponse
 from datetime import date, datetime, timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
-from .models import Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall
+from .models import Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Promocode, Vacancy
 from django.contrib import admin
 import logging
 from plotly.graph_objects import Bar, Layout, Figure
@@ -131,26 +134,6 @@ class UserAccountView(LoginRequiredMixin, View):
         logger.info("render user account")
         return render(request,'museum/user_account.html', context={'employee': Employee.objects.get(user_name=request.user.username)})
     
-class InfoView(View):
-    @staticmethod
-    def get(request):
-        halls_count = Hall.objects.all().count()
-        exhibits_count = Exhibit.objects.all().count()
-        exhibitions_count = Exhibition.objects.all().count()
-        expositions_count = Exposition.objects.all().count()
-        this_month_excursion_count = Excursion.objects.filter(date__month=date.today().month).count()
-
-        context = {
-            'halls_count' : halls_count,
-            'exhibits_count' : exhibits_count,
-            'exhibitions_count' : exhibitions_count,
-            'expositions_count' : expositions_count,
-            'this_month_excursion_count' : this_month_excursion_count
-
-        }
-
-        return render(request, 'museum/info.html', context)
-
 class DiagramView(View):
     @staticmethod
     def get(request):
@@ -192,7 +175,48 @@ class EmployeeListView(ListView):
     
     template_name = 'museum/contacts.html'
 
+class PrivacyPolicyView(View):    
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/privacy_policy.html')
     
+class VacancyListView(ListView):
+    model = Vacancy
+    
+    template_name = 'museum/vacancy_list.html'
 
+class VacancyDetailView(DetailView):
+    model = Vacancy
+    
+    template_name = 'museum/vacancy_detail.html'
+    
+class PromocodeView(View):
+    @staticmethod
+    def get(request):
+        valid_promocodes=Promocode.objects.filter(start_date__lt=datetime.now(), expiration_date__gt=datetime.now())
+        expired_promocodes=Promocode.objects.filter(start_date__lt=datetime.now(), expiration_date__lt=datetime.now())
+        inactive_promocodes=Promocode.objects.filter(start_date__gt=datetime.now())
 
+        context = {'valid_promocodes': valid_promocodes, 'expired_promocodes':expired_promocodes, 'inactive_promocodes':inactive_promocodes}
+        return render(request, 'museum/promocode_list.html', context)
+
+class InfoView(View):
+    @staticmethod
+    def get(request):
+        halls_count = Hall.objects.all().count()
+        exhibits_count = Exhibit.objects.all().count()
+        exhibitions_count = Exhibition.objects.all().count()
+        expositions_count = Exposition.objects.all().count()
+        this_month_excursion_count = Excursion.objects.filter(date__month=date.today().month).count()
+
+        context = {
+            'halls_count' : halls_count,
+            'exhibits_count' : exhibits_count,
+            'exhibitions_count' : exhibitions_count,
+            'expositions_count' : expositions_count,
+            'this_month_excursion_count' : this_month_excursion_count
+
+        }
+
+        return render(request, 'museum/info.html', context)
 

@@ -24,12 +24,16 @@
   <ItemGroup>
     <Content Include=".coverage" />
     <Content Include="db.sqlite3" />
+    <Content Include="media\audio\expic_music.mp3" />
     <Content Include="media\icons\logos\facebook.png" />
     <Content Include="media\icons\logos\MuseumLogo.png" />
+    <Content Include="media\icons\logos\MuseumLogoHighRes.png" />
+    <Content Include="media\icons\logos\MuseumLogoHighResUltra.png" />
     <Content Include="media\icons\logos\twitter.png" />
     <Content Include="media\images\addBanners\addBanner.png" />
     <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="media\videos\HD Epic Sax Gandalf.mp4" />
+    <Content Include="museum\static\files\privacy_policy.txt" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
     <Content Include="museum\templates\museum\article.html" />
@@ -43,6 +47,10 @@
     <Content Include="museum\templates\museum\hall.html" />
     <Content Include="museum\templates\museum\index.html" />
     <Content Include="museum\templates\museum\info.html" />
+    <Content Include="museum\templates\museum\privacy_policy.html" />
+    <Content Include="museum\templates\museum\vacancy_detail.html" />
+    <Content Include="museum\templates\museum\vacancy_list.html" />
+    <Content Include="museum\templates\museum\promocode_list.html" />
     <Content Include="museum\templates\shared\layout.html" />
     <Content Include="museum\templates\museum\articles.html" />
     <Content Include="museum\templates\shared\sertificate.html" />
@@ -61,6 +69,7 @@
     <Compile Include="MuseumApp\__init__.py" />
     <Compile Include="museum\admin.py" />
     <Compile Include="museum\apps.py" />
+    <Compile Include="museum\forms.py" />
     <Compile Include="museum\migrations\0001_initial.py" />
     <Compile Include="museum\migrations\0002_employee_password.py" />
     <Compile Include="museum\migrations\0003_remove_employee_password.py" />
@@ -79,11 +88,13 @@
     <Folder Include="media\images\addBanners\" />
     <Folder Include="media\images\profile_photos\" />
     <Folder Include="media\icons\" />
+    <Folder Include="media\audio\" />
     <Folder Include="media\videos\" />
     <Folder Include="museum" />
     <Folder Include="MuseumApp" />
     <Folder Include="museum\migrations" />
     <Folder Include="museum\static" />
+    <Folder Include="museum\static\files\" />
     <Folder Include="museum\templates\" />
     <Folder Include="museum\templates\museum" />
     <Folder Include="museum\templates\shared\" />

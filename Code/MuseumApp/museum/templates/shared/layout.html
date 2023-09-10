@@ -19,7 +19,10 @@
             <a href="{% url 'exhibition' %}" class="navbar-item">Exhibitions</a>
             <a href="{% url 'article-list' %}" class="navbar-item">Articles</a>
             <a href="{% url 'faq' %}" class="navbar-item">FAQ</a>
-            <a href="{% url 'contacts' %}" class="navbar-item">FAQ</a>
+            <a href="{% url 'contacts' %}" class="navbar-item">Contacts</a>
+            <a href="{% url 'vacancy-list' %}" class="navbar-item">Vacancies</a>
+            <a href="{% url 'promocodes' %}" class="navbar-item">Promocodes</a>
+
             {% if user.is_authenticated %}
             <h class="navbar-item">User: {{ user.get_username }}</h>
             {% if user.is_superuser %}
@@ -43,14 +46,29 @@
     </main>
     <footer>
         <hr />
-        Our partners:
-        <a href="https://twitter.com">
-            <img src="/media/icons/logos/twitter.png" alt="Facebook logo" style="max-width: 200px;">
-        </a>
-        <a href="https://facebook.com">
-            <img src="/media/icons/logos/facebook.png" alt="Facebook logo" style="max-width: 200px;">
-        </a>
+        <div>
+            <section>
+                Our partners:
+                <a href="https://twitter.com">
+                    <img src="/media/icons/logos/twitter.png" alt="Facebook logo">
+                </a>
+                <a href="https://facebook.com">
+                    <img src="/media/icons/logos/facebook.png" alt="Facebook logo">
+                </a>
 
+            </section>
+            <a href="{%url 'privacy_policy'%}" download="/museum/static/files/privacy_policy.txt">Our privacy policy</a>
+
+            <section>
+                Our contacts:
+                <a href="mailto:ganal94637@cohodl.com?subject=Вопрос">ganal94637@cohodl.com</a>
+                <a href="tel:88005553535">88005553535</a>
+            </section>
+
+            <section>
+                Awesome museum since <time datetime="1879-12-7">December 7th 1879</time>.
+            </section>
+        </div>
     </footer>
 </body>
 </html>

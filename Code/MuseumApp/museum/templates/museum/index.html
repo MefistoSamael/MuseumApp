@@ -1,13 +1,26 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<h2>Latest article:</h2>
-<h3>{{ article.title }}</h3>
-<h4>{{ article.summury }}</h4>
-<img src="{{article.image.url}}" alt="Photo doesnt exist" style="max-width: 500px;">
-<br />
-<a href="/article/{{article.pk}}">Reade more</a>
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-    <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner" style="max-width: 500px;">
-</a>
+<!--<div class="one-line">-->
+<div>
+
+    <!--<article class="center">-->
+    <article>
+        <h2>Latest article:</h2>
+        <h3>{{ article.title }}</h3>
+        <h4>{{ article.summury }}</h4>
+        <!--<img style="max-width: 100%;" src="{{article.image.url}}" alt="Photo doesnt exist">-->
+        <img src="{{article.image.url}}" alt="Photo doesnt exist">
+        <br />
+        <a href="/article/{{article.pk}}">Reade more</a>
+
+    </article>
+     <aside >
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner">
+        </a>
+    </aside>
+
+</div>
+
 {% endblock %}

@@ -1,9 +1,10 @@
 # forms.py
 from datetime import date
 import logging
+from typing import Any, Dict
 from django import forms
 
-from museum.models import Employee, Exhibit, Exhibition, Hall
+from museum.models import Employee, Exhibit, Exhibition, Hall, Promocode, Review
 
 logger = logging.getLogger(__name__)
 
@@ -33,4 +34,19 @@ class ExhibitForm(forms.ModelForm):
     
     class Meta:
          model = Exhibit
+         fields = '__all__'
+
+class PromocodeForm(forms.ModelForm):
+    def clean(self):
+        start_date = self.cleaned_data.get('start_date')
+
+        expiration_date = self.cleaned_data.get('expiration_date')
+        
+        if (start_date > expiration_date):
+            raise forms.ValidationError("Invalid promocode start and expiration dates") 
+        
+        return self.cleaned_data
+    
+    class Meta:
+         model = Promocode
          fields = '__all__'

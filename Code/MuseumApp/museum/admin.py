@@ -5,8 +5,8 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.http import Http404
 
-from museum.forms import ExhibitForm
-from .models import ArtForm, Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Position, Theme
+from museum.forms import ExhibitForm, PromocodeForm
+from .models import ArtForm, Article, Employee, Excursion, Exhibit, Exhibition, Exposition, Hall, Position, Promocode, Review, Theme, Vacancy
 import re
 
 @receiver(post_save, sender=Employee)
@@ -128,6 +128,10 @@ class ExhibitionAdmin(admin.ModelAdmin):
 class ArticleAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Vacancy)
+class VacancyAdmin(admin.ModelAdmin):
+    pass
+
 
 @admin.register(Exhibit)
 class ExhibitAdmin(admin.ModelAdmin):
@@ -188,4 +192,13 @@ class ExcursionAdmin(admin.ModelAdmin):
 class PositionAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Promocode)
+class PromocodeAdmin(admin.ModelAdmin):
+    list_display=('code', 'start_date', 'expiration_date')
+    
+    form = PromocodeForm
 
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    pass
+    

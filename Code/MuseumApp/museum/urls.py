@@ -24,5 +24,8 @@ urlpatterns = [
     path("article/<int:pk>/", museum.views.ArticleDetailView.as_view(), name="article-detail"),
     path("faq/", museum.views.FAQView.as_view(), name="faq"),
     path("contacts/", museum.views.EmployeeListView.as_view(), name="contacts"),
-
+    path("privacy/", museum.views.PrivacyPolicyView.as_view(), name="privacy_policy"),
+    path("vacancy/", museum.views.VacancyListView.as_view(), name="vacancy-list"),
+    path("vacancy/<int:pk>/", museum.views.VacancyDetailView.as_view(), name="vacancy-detail"),
+    path("promocodes/", museum.views.PromocodeView.as_view(), name="promocodes"),
 ]

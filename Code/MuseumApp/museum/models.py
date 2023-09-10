@@ -1,4 +1,5 @@
 from xmlrpc.client import DateTime
+from django.core import validators
 from django.core.validators import MinLengthValidator
 from django.db import models
 from datetime import datetime
@@ -152,5 +153,50 @@ class Article(models.Model):
     content = models.TextField(help_text="enter content of the article")
     
     creation_date = models.DateTimeField(auto_now_add=True)
+    
+class Vacancy(models.Model):
+    
+    position = models.CharField(max_length=50, help_text="enter employee position")
+
+    company_name = models.CharField(max_length=50, help_text="enter company name")
+    
+    city = models.CharField(max_length=50, help_text="enter city")
+    
+    job_character = models.CharField(max_length=50, help_text="enter job character")
+    
+    schedule = models.CharField(max_length=50, help_text="enter schedule")
+    
+    employment = models.CharField(max_length=50, help_text="enter employement")
+    
+    experience = models.CharField(max_length=50, help_text="enter experience")
+    
+    education = models.CharField(max_length=50, help_text="enter education")
+    
+    description = models.TextField(help_text="enter vacancy description")
+    
+    salary = models.CharField(max_length=50, help_text="enter salary")
+    
+    def __str__(self):
+        return f"{self.position} {self.company_name}"
+    
+class Review(models.Model):
+    reviewer = models.CharField(max_length=50, help_text="enter reviewer")
+    
+    rate = models.PositiveIntegerField(validators=[validators.MinValueValidator(1),validators.MaxValueValidator(10)], help_text="enter rate")
+    
+    text = models.TextField(help_text="enter review text")
+    
+    creation_date = models.DateTimeField(auto_now_add=True)
+    
+class Promocode(models.Model):
+    code = models.CharField(max_length=50, help_text="enter Promocode")
+    
+    start_date = models.DateTimeField()
+
+    expiration_date = models.DateTimeField()
+    
+    def __str__(self):
+        return self.code
+    
 
 
