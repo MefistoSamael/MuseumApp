@@ -1,0 +1,91 @@
+<mxfile host="Electron" modified="2023-09-24T09:26:00.742Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="rNkW6ruwRDFIzJlIBQpS" version="21.1.2" type="device">
+  <diagram name="Страница 1" id="We4AAdSpWE08B8O5IMvD">
+    <mxGraphModel dx="1964" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-8" value="" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="455" y="320" width="280" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-10" value="" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry y="220" width="290" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9pIV4ZW82kiWG7Veoc08-1" target="9pIV4ZW82kiWG7Veoc08-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9pIV4ZW82kiWG7Veoc08-1" target="9pIV4ZW82kiWG7Veoc08-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-1" value="Написать лабу" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="359" y="40" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.885;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="9pIV4ZW82kiWG7Veoc08-2" target="9pIV4ZW82kiWG7Veoc08-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-2" value="Доделать бизнес логику" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="249" y="140" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9pIV4ZW82kiWG7Veoc08-3" target="5KmrJC_rlYxkQ93zLpkF-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9pIV4ZW82kiWG7Veoc08-3" target="5KmrJC_rlYxkQ93zLpkF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-3" value="Сделать фронт" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="650" y="140" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-6" value="Сделать API(по приколу сделать рисование фокти для экспоната через нейронку)" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="10" y="235" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-8" value="Сделать отображение двух последних статей вместо одной" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="170" y="235" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-9" value="Сделать в review bool поле(вернетесь к нам еще?)" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="10" y="310" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-15" value="Стырить имеющийся bootstrap&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="790" y="320" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9pIV4ZW82kiWG7Veoc08-16" value="Review form сделать чистым хтмль, выбор оценки сделать выпадающим списком" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="330" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5KmrJC_rlYxkQ93zLpkF-1" target="5KmrJC_rlYxkQ93zLpkF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-1" value="Html" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="540" y="230" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-2" value="CSS" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="790" y="230" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-3" value="добавить&amp;nbsp;реквизиты&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="575" y="500" width="135" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-4" value="Оформить одни промокды при помощи ol" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="410" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5KmrJC_rlYxkQ93zLpkF-5" target="5KmrJC_rlYxkQ93zLpkF-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="5KmrJC_rlYxkQ93zLpkF-5" target="5KmrJC_rlYxkQ93zLpkF-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-5" value="изменить страницу about" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="500" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-6" value="Таблица для работникоа как у Михи" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="330" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-7" value="Весь оставшийся док" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="320" width="71" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-12" value="цитаты, стих, видео, аудио на другую страницу" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="650" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5KmrJC_rlYxkQ93zLpkF-16" value="история по годам списком" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="650" width="80" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
