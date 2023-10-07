@@ -1,7 +1,66 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<section>
+<section class="grid-container">
+    {% if exposition_list %}
+
+    {% for exposition in exposition_list %}
+    <table border="1" class="grid-container-item">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>exposition name</td>
+                <td>{{ exposition.name }}</td>
+            </tr>
+            <tr>
+                <td> theme </td>
+                <td>{{ exposition.theme }}</td>
+            </tr>
+
+            {%if exposition.hall.all%}
+            <tr>
+                <td colspan="2">
+                    Hall
+                </td>
+            </tr>
+                {% for hall in exposition.hall.all %}
+            <tr>
+                <td colspan="2">
+                    {{hall}}
+
+                </td>
+            </tr>
+            {% endfor %}
+            {%else%}
+            <tr>
+                <td>
+                    There are no halls
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td colspan="2">
+                    <a href="exhibits/{{ exposition.id }}">View exibits</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    {% endfor %}
+
+    {% else %}
+    <p>There are no excursion</p>
+    {% endif %}
+</section>
+
+<!--<section>
     <h1>Expositions</h1>
     {% if exposition_list %}
     <ul>
@@ -46,5 +105,5 @@
     <p>There are no exposition</p>
     {% endif %}
 
-</section>
+</section>-->
 {% endblock %}

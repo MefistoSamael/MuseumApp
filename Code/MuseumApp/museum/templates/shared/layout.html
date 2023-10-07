@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="navbar">
-                <a href="/" class="navbar-brand">Museum App</a>
+                <a href="/" class="navbar-brand">Museum AVpp</a>
                 <a href="{% url 'home' %}" class="navbar-item">Home</a>
                 <a href="{% url 'about' %}" class="navbar-item">About</a>
                 <a href="{% url 'excursion' %}" class="navbar-item">Excursion</a>
@@ -28,6 +28,9 @@
                 <a href="{% url 'vacancy-list' %}" class="navbar-item">Vacancies</a>
                 <a href="{% url 'promocodes' %}" class="navbar-item">Promocodes</a>
                 <a href="{% url 'review_list' %}" class="navbar-item">Reviews</a>
+                <a href="{% url 'lab_task' %}" class="navbar-item">Labs tasks</a>
+                <a href="{% url 'api' %}" class="navbar-item">API</a>
+
 
                 {% if user.is_authenticated %}
                 <p class="navbar-item">User: {{ user.get_username }}</p>
@@ -54,22 +57,25 @@
     <footer>
         <hr />
         <div itemscope itemtype="Http://data-vocabulary.org/Organization">
-            <section>
-                Our partners:
-                <a href="https://twitter.com">
-                    <img src="/media/icons/logos/twitter.png" alt="Facebook logo">
+            Our partners:<br /><br />
+            <section class="flex">
+                <a href="https://twitter.com" class="flex_section_item">
+                    <img src="/media/icons/logos/twitter.png" alt="Facebook logo" class="round">
                 </a>
-                <a href="https://facebook.com">
-                    <img src="/media/icons/logos/facebook.png" alt="Facebook logo">
+                <a href="https://facebook.com" class="flex_section_item">
+                    <img src="/media/icons/logos/facebook.png" alt="Facebook logo" class="round">
                 </a>
 
             </section>
-            <a href="{%url 'privacy_policy'%}" itemprop="hasMerchantReturnPolicy" download="/museum/static/files/privacy_policy.txt">Our privacy policy</a>
+            <a class="privacy_policy" href="/museum/static/files/privacy_policy.txt" itemprop="hasMerchantReturnPolicy" download>Our privacy policy</a>
 
             <section>
                 Our contacts:
-                <a itemprop="email" href="mailto:ganal94637@cohodl.com?subject=Вопрос">mail: ganal94637@cohodl.com</a>
-                <a itemprop="telephone" href="tel:88005553535">telephone: 88005553535</a>
+                <a class="requsites" itemprop="email" href="mailto:ganal94637@cohodl.com?subject=Вопрос">mail: ganal94637@cohodl.com</a>
+                <a class="requsites" itemprop="telephone" href="tel:88005553535">telephone: 88005553535</a>
+                <p class="requsites">
+                    Address: Pushkin's street, Kolotushkin's house
+                </p>
             </section>
 
             <section>

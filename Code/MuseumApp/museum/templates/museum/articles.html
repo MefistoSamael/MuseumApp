@@ -7,7 +7,7 @@
         {% for article in object_list %}
         <li>
             <h1>{{ article.title }}</h1><br />
-            <h2>{{ article.summury }}</h2><br />
+            <p class="t3 clip">{{ article.summury }}</p><br />
             <img src="{{article.image.url}}" alt="article image" style="max-width: 500px;"><br />
             <a href="/article/{{article.pk}}">Reade more</a>
 

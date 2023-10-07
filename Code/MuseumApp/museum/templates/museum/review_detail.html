@@ -5,6 +5,5 @@
 <p>{{ review.rate }}</p>
 <p>{{ review.text }}</p>
 <p>{{ review.creation_date }}</p>
-<a href="{% url 'review_update' review.pk %}">Edit review</a>
 <a href="{% url 'review_delete' review.pk %}">Delete review</a>
 {% endblock %}

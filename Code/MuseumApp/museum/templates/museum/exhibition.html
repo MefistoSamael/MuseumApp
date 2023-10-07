@@ -1,7 +1,69 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<section itemscope itemtype="Http://data-vocabulary.org/Event/">
+<section class="grid-container">
+    {% if exhibition_list %}
+
+    {% for exhibition in exhibition_list %}
+    <table border="1" class="grid-container-item">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>exhibition name</td>
+                <td>{{ exhibition.name }}</td>
+            </tr>
+            <tr>
+                <td> theme </td>
+                <td>{{ exhibition.theme }}</td>
+            </tr>
+            <tr>
+                <td>date </td>
+                <td>{{ exhibition.date }}</td>
+            </tr>
+            {%if exhibition.hall.all%}
+            <tr>
+                <td colspan="2">
+                    Hall
+                </td>
+            </tr>
+            {% for hall in exhibition.hall.all %}
+            <tr>
+                <td colspan="2">
+                    {{hall}}
+
+                </td>
+            </tr>
+            {% endfor %}
+            {%else%}
+            <tr>
+                <td>
+                    There are no halls
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td colspan="2">
+                    <a href="exhibits/{{ exhibition.id }}">View exibits</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    {% endfor %}
+
+    {% else %}
+    <p>There are no excursion</p>
+    {% endif %}
+</section>
+
+<!--<section itemscope itemtype="Http://data-vocabulary.org/Event/">
     <h1>Exhibitions</h1>
     {% if exhibition_list %}
     <ul>
@@ -39,7 +101,7 @@
         </li>
 
 
-        
+
 
         {% endfor %}
 
@@ -48,5 +110,5 @@
     <p>There are no exhibition</p>
     {% endif %}
 
-</section>
+</section>-->
 {% endblock %}

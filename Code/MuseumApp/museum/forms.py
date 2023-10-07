@@ -53,16 +53,14 @@ class PromocodeForm(forms.ModelForm):
          model = Promocode
          fields = '__all__'
 
-class ReviewForm(forms.ModelForm):
+class ReviewForm(forms.Form):
     reviewer = forms.CharField(max_length=50)
      
     rate = forms.IntegerField(validators=[validators.MinValueValidator(1),validators.MaxValueValidator(10)])
     
-    text = forms.Textarea()
+    text = forms.CharField()
     
-    class Meta:
-        model=Review
-        fields=['reviewer','rate', 'text']
+    will_come_back = forms.BooleanField(required=False  )
         
 
     

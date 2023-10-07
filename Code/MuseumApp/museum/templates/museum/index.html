@@ -5,18 +5,19 @@
 <div>
 
     <!--<article class="center">-->
+        <h2>Latest articles:</h2>
+        {%for article in articles%}
     <article>
-        <h2>Latest article:</h2>
-        <h3>{{ article.title }}</h3>
-        <h4>{{ article.summury }}</h4>
+        <h3 style=" position:relative; left: 40px; ">{{ article.title }}</h3>
+        <p class="clip">{{ article.summury }}</p>
         <img src="{{article.image.url}}" alt="Photo doesnt exist">
         <br />
         <a href="/article/{{article.pk}}">Reade more</a>
-
     </article>
+    {%endfor%}
      <aside >
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner">
+            <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner" class="banner">
         </a>
     </aside>
 

@@ -1,7 +1,52 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<section>
+<section class="grid-container">
+    {% if hall_list %}
+
+    {% for hall in hall_list %}
+    <table border="1" class="grid-container-item">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>hall name</td>
+                <td>{{ hall.name }}</td>
+            </tr>
+            <tr>
+                <td> theme </td>
+                <td>{{ hall.floor }}</td>
+            </tr>
+            <tr>
+                <td> number </td>
+                <td>{{ hall.number }}</td>
+            </tr>
+            <tr>
+                <td> area </td>
+                <td>{{ hall.area }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="exhibits/{{ hall.id }}">View exibits</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    {% endfor %}
+
+    {% else %}
+    <p>There are no excursion</p>
+    {% endif %}
+</section>
+
+<!--<section>
     <h1>Halls</h1>
     {% if hall_list %}
     <ul>
@@ -32,5 +77,5 @@
     <p>There are no hall</p>
     {% endif %}
 
-</section>
+</section>-->
 {% endblock %}

@@ -2,14 +2,22 @@
 
 {% block content %}
 <section id="anchor_section">
-    <a href="#valid_p">Valid Promocodes</a>
-    <a href="#expired_p">Epired Promocodes</a>
-    <a href="#inactive_p">Inactive Promocodes</a>
+    <ul>
+        <li>
+            <a href="#inactive_p">Inactive Promocodes</a>
+        </li>
+        <li>
+            <a href="#expired_p">Epired Promocodes</a>
+        </li>
+        <li>
+            <a href="#valid_p">Valid Promocodes</a>
+        </li>
+    </ul>
 </section>
 
 <article>
     <h1>Valid Promocodes</h1>
-    <ol start="-10" id="valid_p">
+    <ol class="unicode" start="-10" id="valid_p">
         {% for valid in valid_promocodes %}
         <li>
             {{valid.code}}
@@ -94,7 +102,7 @@
 <a href="#anchor_section">To the sky</a>
 <article>
     <h1>Expired Promocodes</h1>
-    <ol id="expired_p">
+    <ol class="unicode" id="expired_p">
         {% for expired in expired_promocodes %}
         <li>
             {{expired.code}}

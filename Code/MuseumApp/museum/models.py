@@ -188,6 +188,8 @@ class Review(models.Model):
     
     creation_date = models.DateTimeField(auto_now_add=True)
     
+    will_come_back = models.BooleanField(default=False);
+    
 class Promocode(models.Model):
     code = models.CharField(max_length=50, help_text="enter Promocode")
     

@@ -1,0 +1,11 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+<span class="message">{{ message }}</span>{{ content }}
+<h2>Random joke</h2>
+<p>{{ setup }}</p>
+<p>{{ punch }}</p>
+<img src="{{ image_url }}" alt="Such image doesn't exist" style="max-width: 500px;">
+
+{% endblock %}

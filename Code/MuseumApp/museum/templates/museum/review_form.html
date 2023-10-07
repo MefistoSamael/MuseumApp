@@ -7,18 +7,29 @@
 
     <div>
         <label for="{{ form.reviewer.id_for_label }}">Reviewer name:</label>
-        {{ form.reviewer }}
+        <input name="{{ form.reviewer.name }}" id="{{ form.reviewer.auto_id }}" type="{{ form.reviewer.field.widget.input_type }}"/>
         {{ form.reviewer.errors }}
     </div>
     <div>
         <label for="{{ form.rate.id_for_label }}">Rate:</label>
-        {{ form.rate }}
+        <select name="{{ form.rate.name }}" id="{{ form.rate.auto_id }}">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
         {{ form.rate.errors }}
     </div>
     <div>
         <label for="{{ form.text.id_for_label }}">Review text:</label>
-        {{ form.text }}
+        <input name="{{ form.text.name }}" id="{{ form.text.auto_id }}" type="{{ form.text.field.widget.input_type }}"/>
         {{ form.text.errors }}
+    </div>
+    <div>
+        <label for="{{ form.will_come_back.id_for_label }}">Will you come back?:</label>
+        <input name="{{ form.will_come_back.name }}" id="{{ form.will_come_back.auto_id }}" type="{{ form.will_come_back.field.widget.input_type }}" /> <span>A4</span>
+        {{ form.will_come_back.errors }}
     </div>
     <input type="submit" value="review" />
 </form>

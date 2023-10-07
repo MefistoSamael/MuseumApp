@@ -25,17 +25,24 @@
     <Content Include=".coverage" />
     <Content Include="db.sqlite3" />
     <Content Include="media\audio\expic_music.mp3" />
+    <Content Include="media\icons\logos\com_logo.png" />
     <Content Include="media\icons\logos\facebook.png" />
     <Content Include="media\icons\logos\MuseumLogo.png" />
     <Content Include="media\icons\logos\MuseumLogoHighRes.png" />
     <Content Include="media\icons\logos\MuseumLogoHighResUltra.png" />
+    <Content Include="media\icons\logos\RA_SI_YA.png" />
     <Content Include="media\icons\logos\twitter.png" />
     <Content Include="media\images\addBanners\addBanner.png" />
+    <Content Include="media\images\backgrounds\bg.jpg" />
+    <Content Include="media\images\backgrounds\ornament.png" />
     <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="media\videos\HD_Epic_Sax_Gandalf.mp4" />
     <Content Include="museum\static\files\privacy_policy.txt" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
+    <Content Include="museum\templates\museum\api.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="museum\templates\museum\article.html" />
     <Content Include="museum\templates\museum\contacts.html" />
     <Content Include="museum\templates\museum\diagram.html" />
@@ -47,6 +54,9 @@
     <Content Include="museum\templates\museum\hall.html" />
     <Content Include="museum\templates\museum\index.html" />
     <Content Include="museum\templates\museum\info.html" />
+    <Content Include="museum\templates\museum\lab_task.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="museum\templates\museum\privacy_policy.html" />
     <Content Include="museum\templates\museum\review_delete.html" />
     <Content Include="museum\templates\museum\review_detail.html" />
@@ -90,6 +100,7 @@
     <Folder Include="media\icons\logos\" />
     <Folder Include="media\images\" />
     <Folder Include="media\images\addBanners\" />
+    <Folder Include="media\images\backgrounds\" />
     <Folder Include="media\images\profile_photos\" />
     <Folder Include="media\icons\" />
     <Folder Include="media\audio\" />

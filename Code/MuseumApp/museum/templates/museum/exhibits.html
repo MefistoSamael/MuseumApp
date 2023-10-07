@@ -1,7 +1,64 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<section>
+<section class="grid-container">
+    {% if exhibits %}
+
+    {% for exhibit in exhibits %}
+    <table border="1" class="grid-container-item">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">
+                    <img alt="Hmmm..." src="{{exhibit.photo}}" width="70" height="70" />
+                </td>
+                <td>{{ exhibit.name }}</td>
+            </tr>
+            <tr>
+                <td>{{ exhibit.admission_date }}</td>
+            </tr>
+            <tr>
+                <td>{{ exhibit.observer }}</td>
+            </tr>
+            {% if exhibit.exposition %}
+            <tr>
+                <td>exposition</td>
+                <td>{{ exhibit.exposition }}</td>
+            </tr>
+            {% endif%}
+            {% if exhibit.exhibition %}
+            <tr>
+                <td>exhibition </td>
+                <td>{{ exhibit.exhibition }}</td>
+            </tr>
+            {% endif%}
+            <tr>
+                <td colspan="2">
+                    Art form
+                </td>
+            </tr>
+            {% for aform in exhibit.art_form.all %}
+            <tr>
+                <td colspan="2">
+                    {{aform}}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+
+    {% else %}
+    <p>There are no exhibits</p>
+    {% endif %}
+</section>
+
+<!--<section>
     <h1>Exhibits</h1>
     {% if exhibits %}
     <ul>
@@ -34,15 +91,15 @@
             exposition: {{ exhibit.exposition }}
         </li>
         {% endif%}
-        {% if exhibit.exhibition %}
+        {% if exhibit.exhibit %}
         <li>
-            exhibition: {{ exhibit.exhibition }}
+            exhibit: {{ exhibit.exhibit }}
             <hr />
         </li>
         {% endif%}
 
 
-        
+
 
         {% endfor %}
 
@@ -51,5 +108,5 @@
     <p>There are no exhibit</p>
     {% endif %}
 
-</section>
+</section>-->
 {% endblock %}

@@ -1,33 +1,40 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<section>
-    <h1>Excursions</h1>
+<h1>Excursions</h1>
+<section class="grid-container">
     {% if excursion_list %}
-    <ul>
 
-        {% for excursion in excursion_list %}
-        <li>
-            Name: {{ excursion.name }}
-        </li>
-        <li>
-            Date: {{ excursion.date }}
-        </li>
-        <li>
-            Group amount: {{ excursion.group_amount }}
-        </li>
-        <li>
-            Guide: {{ excursion.guide }}
-            <hr />
-        </li>
-        
+    {% for excursion in excursion_list %}
+    <table border="1" class="grid-container-item">
+        <thead>
+            <tr>
+                <th>Guide</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">
+                    <img alt="Hmmm..." src="{{excursion.guide.photo.url}}" width="70" height="70" />
+                </td>
+                <td>{{ excursion.name }}</td>
+            </tr>
+            <tr>
+                <td>{{ excursion.date }}</td>
+            </tr>
+            <tr>
+                <td>{{ excursion.group_amount }}</td>
+            </tr>
 
-        {% endfor %}
+        </tbody>
+    </table>
 
-    </ul>
+
+    {% endfor %}
+
     {% else %}
     <p>There are no excursion</p>
     {% endif %}
-
 </section>
 {% endblock %}

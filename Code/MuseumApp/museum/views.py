@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 from typing import Any
 from django.db.models.query import QuerySet
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import Http404, HttpResponse
 from datetime import date, datetime, timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -19,6 +19,7 @@ from .models import Article, Employee, Excursion, Exhibit, Exhibition, Expositio
 from django.contrib import admin
 import logging
 from plotly.graph_objects import Bar, Layout, Figure
+from django.db import transaction
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +28,7 @@ class HomeView(View):
     @staticmethod
     def get(request):
         context = {
-            'article' : Article.objects.latest("creation_date")
+            'articles' : Article.objects.all().order_by("-creation_date")[:2]
         }
 
         return render(request, 'museum/index.html', context)
@@ -232,20 +233,60 @@ class ReviewListView(ListView):
 class ReviewDetailView(DetailView):
     model = Review
     template_name = "museum/review_detail.html"
+  
     
-class ReviewCreateView(CreateView):
-    model = Review
-    template_name="museum/review_form.html"
-    form_class = ReviewForm
-    success_url = reverse_lazy('review_list')
+
+class ReviewCreateView(View):
+    @staticmethod
+    def get(request):
+        form = ReviewForm()
+        return render(request, "museum/review_form.html", { 'form': form})
     
-class ReviewUpdateView(UpdateView):
-    model = Review
-    template_name="museum/review_form.html"
-    form_class = ReviewForm
-    success_url = reverse_lazy('review_list')
+    @staticmethod
+    def post(request):
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            with transaction.atomic():
+                Review.objects.create(
+                    reviewer=form.cleaned_data['reviewer'],
+                    rate=form.cleaned_data['rate'],
+                    text=form.cleaned_data['text'],
+                    will_come_back=form.cleaned_data['will_come_back'],
+                    )
+            return redirect("review_list")
+        else:
+            return render(request, "museum/review_form.html", { 'form': form})
 
 class ReviewDeleteView(DeleteView):
     model=Review
     template_name="museum/review_delete.html"
     success_url = reverse_lazy('review_list')
+    
+class lab_taskView(View):    
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/lab_task.html')
+    
+class APIView(View):
+        @staticmethod
+        def get(request):
+            response = requests.get('https://dog.ceo/api/breeds/image/random')
+            image_url = response.json()['message']
+
+            url = 'https://official-joke-api.appspot.com/random_joke'
+            try:
+                res = requests.get(url).json()
+
+                joke_setup = res['setup']
+                joke_punch = res['punchline']
+            except:
+                joke_setup = 'There will be no joke('
+                joke_punch = ''
+
+            context = {
+                'image_url': image_url,
+                'setup':joke_setup,
+                'punch':joke_punch
+            }
+            return render(request, 'museum/api.html', context)
+

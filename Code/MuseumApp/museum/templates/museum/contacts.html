@@ -1,9 +1,37 @@
 {% extends 'shared/layout.html' %}
 
 {% block content %}
-<section>
-    <h1>Our employees</h1>
-    <ul>
+<h1>Our employees</h1>
+<section class="flex">
+    {% for employe in object_list %}
+    <table border="1" class="flex_section_item">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>Informations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">
+                    <img alt="Hmmm..." src="{{employe.photo.url}}" width="70" height="70" />
+                </td>
+                <td>{{ employe.first_name }}</td>
+            </tr>
+            <tr>
+                <td>{{ employe.last_name }}</td>
+            </tr>
+            <tr>
+                <td>{{ employe.position }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ employe.phone_number }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    {% endfor %}
+    <!--<ul>
         {% for employee in object_list %}
         <li>
             <img src="{{employee.photo.url}}" alt="employee image" style="max-width: 500px;"><br />
@@ -15,6 +43,6 @@
         {% empty %}
         <li>No employees yet.</li>
         {% endfor %}
-    </ul>
+    </ul>-->
 </section>
 {% endblock %}
