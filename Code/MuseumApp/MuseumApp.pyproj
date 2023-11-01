@@ -38,8 +38,15 @@
     <Content Include="media\images\profile_photos\profile_icon.png" />
     <Content Include="media\videos\HD_Epic_Sax_Gandalf.mp4" />
     <Content Include="museum\static\files\privacy_policy.txt" />
+    <Content Include="museum\static\js\AgeTask.js" />
+    <Content Include="museum\static\js\Countdown.js" />
+    <Content Include="museum\static\js\DinamicAppearanceChange.js" />
+    <Content Include="museum\static\js\SimpleEvaluations.js" />
+    <Content Include="museum\static\js\SoldierTask.js" />
+    <Content Include="museum\static\js\TableScripts.js" />
     <Content Include="museum\static\site.css" />
     <Content Include="museum\templates\museum\about.html" />
+    <Content Include="museum\templates\museum\age.html" />
     <Content Include="museum\templates\museum\api.html">
       <SubType>Code</SubType>
     </Content>
@@ -62,6 +69,8 @@
     <Content Include="museum\templates\museum\review_detail.html" />
     <Content Include="museum\templates\museum\review_form.html" />
     <Content Include="museum\templates\museum\review_list.html" />
+    <Content Include="museum\templates\museum\soldier_task.html" />
+    <Content Include="museum\templates\museum\table_with_java_script.html" />
     <Content Include="museum\templates\museum\vacancy_detail.html" />
     <Content Include="museum\templates\museum\vacancy_list.html" />
     <Content Include="museum\templates\museum\promocode_list.html" />
@@ -110,6 +119,7 @@
     <Folder Include="museum\migrations" />
     <Folder Include="museum\static" />
     <Folder Include="museum\static\files\" />
+    <Folder Include="museum\static\js\" />
     <Folder Include="museum\templates\" />
     <Folder Include="museum\templates\museum" />
     <Folder Include="museum\templates\shared\" />

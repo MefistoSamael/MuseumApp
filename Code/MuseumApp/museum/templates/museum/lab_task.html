@@ -1,6 +1,54 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
+
+<form name="appearanceForm">
+    <label>Text color</label>
+    <div>
+        <div>
+            <label>Red</label>
+            <input type="radio" name="text_color" value="red" onchange="changeTextColor()"/>
+        </div>
+        <div>
+            <label>Green</label>
+            <input type="radio" name="text_color" value="green" onchange="changeTextColor()"/>
+        </div>
+        <div>
+            <label>Blue</label>
+            <input type="radio" name="text_color" value="blue" onchange="changeTextColor()"/>
+        </div>
+    </div>
+    <label>background color</label>
+    <div>
+        <div>
+            <label>Red</label>
+            <input type="radio" name="background_color" value="red" onchange="changePageColor()"/>
+        </div>
+        <div>
+            <label>Green</label>
+            <input type="radio" name="background_color" value="green" onchange="changePageColor()"/>
+        </div>
+        <div>
+            <label>Blue</label>
+            <input type="radio" name="background_color" value="blue" onchange="changePageColor()"/>
+        </div>
+    </div>
+    <label>Text size</label>
+    <div>
+        <div>
+            <label>Small</label>
+            <input type="radio" name="text_size" value="small" onchange="changeTextSize()" />
+        </div>
+        <div>
+            <label>Medium</label>
+            <input type="radio" name="text_size" value="medium" onchange="changeTextSize()" />
+        </div>
+        <div>
+            <label>Big</label>
+            <input type="radio" name="text_size" value="big" onchange="changeTextSize()" />
+        </div>
+    </div>
+</form>
 <article>
     <h4>Introduction</h4>
 
@@ -103,5 +151,10 @@
     print("Hello world!")
 </code>
 
+
 {% endblock %}
 
+{%load static%}
+{% block scripts%}
+<script type="text/javascript" src="{% static 'js/DinamicAppearanceChange.js' %}"></script>
+{%endblock%}

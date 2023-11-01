@@ -1,0 +1,21 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+<h1>Enter date of birth</h1>
+<form name="inputForm" onsubmit="EvaluateInfo(); return false;">
+    <div>
+        <label>date of birth</label>
+        <input type="date" name="date_of_bitrh" />
+    </div>
+    <div>
+        <input type="submit" value="Send" />
+    </div>
+</form>
+<p id="displayer" hidden>You are <span id="DisplayAge"></span> years old</p>
+{% endblock %}
+
+{%load static%}
+{% block scripts%}
+<script type="text/javascript" src="{% static 'js/AgeTask.js' %}"></script>
+{%endblock%}

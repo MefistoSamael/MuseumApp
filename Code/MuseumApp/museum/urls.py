@@ -1,7 +1,7 @@
 
 from django.urls import include, path, re_path
 import museum.views
-from .views import APIView, ReviewListView, ReviewDetailView, ReviewCreateView, ReviewDeleteView, lab_taskView
+from .views import APIView, AgeView, ReviewListView, ReviewDetailView, ReviewCreateView, ReviewDeleteView, SoldierTaskView, TableWithJavaScriptView, lab_taskView
 
 urlpatterns = [
 
@@ -34,5 +34,7 @@ urlpatterns = [
     path('reviews/delete/<int:pk>/', ReviewDeleteView.as_view(), name='review_delete'),
     path('tasks_kabs/', lab_taskView.as_view(), name='lab_task'),
     path('api/', APIView.as_view(), name='api'),
-
+    path('soldiertask/', SoldierTaskView.as_view(), name='soldier_task'),
+    path('age/', AgeView.as_view(), name='age'),
+    path('tablejs/', TableWithJavaScriptView.as_view(), name='table'),
 ]

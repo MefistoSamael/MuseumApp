@@ -1,12 +1,14 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
-<!--<div class="one-line">-->
+
+<h1 class="banner" style="color:red">Warning!!!!!</h1>
+<h3 style="color:red" id="countdown"></h3>
+<br />
 <div>
 
-    <!--<article class="center">-->
-        <h2>Latest articles:</h2>
-        {%for article in articles%}
+    <h2>Latest articles:</h2>
+    {%for article in articles%}
     <article>
         <h3 style=" position:relative; left: 40px; ">{{ article.title }}</h3>
         <p class="clip">{{ article.summury }}</p>
@@ -15,7 +17,7 @@
         <a href="/article/{{article.pk}}">Reade more</a>
     </article>
     {%endfor%}
-     <aside >
+    <aside>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
             <img src="/media/images/addBanners/addBanner.png" alt="Advertisment banner" class="banner">
         </a>
@@ -24,3 +26,8 @@
 </div>
 
 {% endblock %}
+
+{%load static%}
+{% block scripts%}
+<script type="text/javascript" src="{% static 'js/Countdown.js' %}"></script>
+{%endblock%}

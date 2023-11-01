@@ -30,6 +30,10 @@
                 <a href="{% url 'review_list' %}" class="navbar-item">Reviews</a>
                 <a href="{% url 'lab_task' %}" class="navbar-item">Labs tasks</a>
                 <a href="{% url 'api' %}" class="navbar-item">API</a>
+                <a href="{% url 'soldier_task' %}" class="navbar-item">Soldier task</a>
+                <a href="{% url 'age'%}" class="navbar-item">Age</a>
+                <a href="{% url 'table'%}" class="navbar-item">Table</a>
+
 
 
                 {% if user.is_authenticated %}
@@ -83,5 +87,7 @@
             </section>
         </div>
     </footer>
+    {%block scripts%}
+    {%endblock%}
 </body>
 </html>

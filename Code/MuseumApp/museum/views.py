@@ -213,14 +213,18 @@ class InfoView(View):
         exhibitions_count = Exhibition.objects.all().count()
         expositions_count = Exposition.objects.all().count()
         this_month_excursion_count = Excursion.objects.filter(date__month=date.today().month).count()
+        
+        all_people_count = 0;
+        for e in Excursion.objects.all():
+            all_people_count += e.group_amount
 
         context = {
             'halls_count' : halls_count,
             'exhibits_count' : exhibits_count,
             'exhibitions_count' : exhibitions_count,
             'expositions_count' : expositions_count,
-            'this_month_excursion_count' : this_month_excursion_count
-
+            'this_month_excursion_count' : this_month_excursion_count,
+            'all_people_count': all_people_count
         }
 
         return render(request, 'museum/info.html', context)
@@ -289,4 +293,20 @@ class APIView(View):
                 'punch':joke_punch
             }
             return render(request, 'museum/api.html', context)
+        
+class SoldierTaskView(View):    
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/soldier_task.html')
+    
+class AgeView(View):    
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/age.html')
+    
+class TableWithJavaScriptView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/table_with_java_script.html')
+
 

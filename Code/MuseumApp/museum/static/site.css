@@ -191,10 +191,6 @@ ol.unicode>li:before {
     content: "\20aa "; 
 } 
 
-*::selection{
-    color: darkred;
-}
-
 p.fonts {
     font-family: 'Martian Mono', Arial, sans-serif;
     font-size: 16px;

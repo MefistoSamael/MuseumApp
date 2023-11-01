@@ -1,0 +1,45 @@
+{% extends 'shared/layout.html' %}
+
+{% block content %}
+<h1>Введите данные для добавления в список солдат</h1>
+<form name="inputForm" onsubmit="AddSoldier(); return false;">
+    <div>
+        <label>Фамилия </label>
+        <input type="text" name="last_name" value="Petrov"/>
+    </div>
+    <div>
+        <label>Имя </label>
+        <input type="text" name="first_name" value="Petr"/>
+    </div>
+    <div>
+        <label>Отчество </label>
+        <input type="text" name="patronymic" value="Petrovich"/>
+    </div>
+    <div>
+        <label>Возраст</label>
+        <input type="number" min="18" name="age" value="18"/>
+    </div>
+    <div>
+        <label>Рост</label>
+        <input type="number" min="140" max="210" name="height" value="150"/>
+    </div>
+    <div>
+        <input type="submit" value="Добавить" />
+    </div>
+</form>
+
+<p>
+    Имеется ли в данном подразделении хотя бы два человека одного <input type="checkbox" disabled id="answer"/>
+</p>
+
+<button onclick="isTwoPeoplesSameHeight()">вычислить</button>
+
+<p id="info">
+
+</p>
+{% endblock %}
+{%load static%}
+{% block scripts%}
+
+<script type="text/javascript" src="{% static 'js/SoldierTask.js' %}"></script>
+{%endblock%}
