@@ -1,6 +1,10 @@
 {% extends "shared/layout.html" %}
 
 {% block content %}
+<section id="top" class="slide cert">
+    <img src="/media/images/leftDoor.jpg" id="door_left" class="slide" />
+    <img src="/media/images/rightDoor.jpg" id="door_right" class="slide" />
+</section>
 <article>
     <h4>Introduction</h4>
 
@@ -62,3 +66,8 @@
 <br />
 
 {% endblock %}
+
+{%load static%}
+{% block scripts%}
+<script type="text/javascript" src="{% static 'js/ScrollingAnimation.js' %}"></script>
+{%endblock%}

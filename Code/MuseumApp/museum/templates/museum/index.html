@@ -6,15 +6,20 @@
 <h3 style="color:red" id="countdown"></h3>
 <br />
 <div>
-
     <h2>Latest articles:</h2>
     {%for article in articles%}
-    <article>
-        <h3 style=" position:relative; left: 40px; ">{{ article.title }}</h3>
-        <p class="clip">{{ article.summury }}</p>
-        <img src="{{article.image.url}}" alt="Photo doesnt exist">
-        <br />
-        <a href="/article/{{article.pk}}">Reade more</a>
+    <article class="cards">
+        <div class="card-wrapper cards">
+            <div class="card cards">
+                <h3 style=" position:relative; left: 40px; word-break:break-all; width:50vw;">{{ article.title }}</h3>
+                <div class="content cards">
+                    <p class="clip">{{ article.summury }}</p>
+                    <img style="width: 50vw; height:50vh;" src="{{article.image.url}}" alt="Photo doesnt exist">
+                    <br />
+                    <a href="/article/{{article.pk}}">Reade more</a>
+                </div>
+            </div>
+        </div>
     </article>
     {%endfor%}
     <aside>
@@ -30,4 +35,5 @@
 {%load static%}
 {% block scripts%}
 <script type="text/javascript" src="{% static 'js/Countdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/Cards.js' %}"></script>
 {%endblock%}

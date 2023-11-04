@@ -7,30 +7,30 @@
     <div>
         <div>
             <label>Red</label>
-            <input type="radio" name="text_color" value="red" onchange="changeTextColor()"/>
+            <input type="radio" name="text_color" value="red" onchange="changeTextColor()" />
         </div>
         <div>
             <label>Green</label>
-            <input type="radio" name="text_color" value="green" onchange="changeTextColor()"/>
+            <input type="radio" name="text_color" value="green" onchange="changeTextColor()" />
         </div>
         <div>
             <label>Blue</label>
-            <input type="radio" name="text_color" value="blue" onchange="changeTextColor()"/>
+            <input type="radio" name="text_color" value="blue" onchange="changeTextColor()" />
         </div>
     </div>
     <label>background color</label>
     <div>
         <div>
             <label>Red</label>
-            <input type="radio" name="background_color" value="red" onchange="changePageColor()"/>
+            <input type="radio" name="background_color" value="red" onchange="changePageColor()" />
         </div>
         <div>
             <label>Green</label>
-            <input type="radio" name="background_color" value="green" onchange="changePageColor()"/>
+            <input type="radio" name="background_color" value="green" onchange="changePageColor()" />
         </div>
         <div>
             <label>Blue</label>
-            <input type="radio" name="background_color" value="blue" onchange="changePageColor()"/>
+            <input type="radio" name="background_color" value="blue" onchange="changePageColor()" />
         </div>
     </div>
     <label>Text size</label>
@@ -150,6 +150,23 @@
 <code>
     print("Hello world!")
 </code>
+{% if user.is_superuser %}
+<div>
+    <label>Enter time of image change: </label>
+    <input type="number" id="time" value="5" onchange="RestartCarousel()"/>
+</div>
+{% endif %}
+<div class="carousel-container">
+    <div class="carousel-slide">
+        <a href="https://com.com"><img src="/media/icons/logos/com_logo.png" alt="1"></a>
+    </div>
+    <div class="carousel-slide">
+        <a href="https://facebook.com"><img src="/media/icons/logos/facebook.png" alt="2"></a>
+    </div>
+    <div class="carousel-slide">
+        <a href="https://twitter.com"><img src="/media/icons/logos/twitter.png" alt="3"></a>
+    </div>
+</div>
 
 
 {% endblock %}
@@ -157,4 +174,5 @@
 {%load static%}
 {% block scripts%}
 <script type="text/javascript" src="{% static 'js/DinamicAppearanceChange.js' %}"></script>
+<script src="{% static 'js/carousel.js' %}"></script>
 {%endblock%}

@@ -28,7 +28,7 @@ class HomeView(View):
     @staticmethod
     def get(request):
         context = {
-            'articles' : Article.objects.all().order_by("-creation_date")[:2]
+            'articles' : Article.objects.all().order_by("-creation_date")[:1]
         }
 
         return render(request, 'museum/index.html', context)
@@ -309,4 +309,12 @@ class TableWithJavaScriptView(View):
     def get(request):
         return render(request, 'museum/table_with_java_script.html')
 
-
+class ExtendsTestView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/testExtends.html')
+    
+class PrototypeTestView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'museum/testPrototype.html')

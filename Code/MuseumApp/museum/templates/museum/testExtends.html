@@ -1,0 +1,11 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+<h1>Its just for extends inheritance</h1>
+{% endblock %}
+
+{%load static%}
+{% block scripts%}
+<script type="text/javascript" src="{% static 'js/ExtendsInheritance.js' %}"></script>
+{%endblock%}
